@@ -1,0 +1,18 @@
+@import "./mixin";
+@import "./variable";
+@include window-offset-width(0, $breakpoint-laptop) {
+  .main-container {
+    font-weight: 700;
+  }
+}
+@include window-offset-width($breakpoint-laptop + 1, 100vw) {
+  .main-container {
+    font-weight: 700;
+  }
+}
+.app {
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: center;
+  padding: 0 3rem;
+}

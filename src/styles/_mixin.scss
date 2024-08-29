@@ -1,0 +1,5 @@
+@mixin window-offset-width($min-width, $max-width) {
+  @media (min-width:#{$min-width}) and (max-width:#{$max-width}) {
+    @content;
+  }
+}

@@ -1,0 +1,146 @@
+@import "./mixin";
+@import "./variable";
+.app-container {
+  width: 1100px;
+  max-width: calc(100vw - 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 3rem 0;
+  .my-info {
+    div {
+      max-width: 50%;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    .my-info-inner {
+      display: flex;
+      gap: 3rem;
+      flex-direction: column;
+      justify-content: center;
+      h1 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      p {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .my-info__photo {
+      @include window-offset-width(0, $breakpoint-laptop) {
+        width: 13rem;
+        height: 13rem;
+        .photo-inner {
+          min-width: 11.5rem;
+          height: 11.5rem;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      @include window-offset-width($breakpoint-laptop + 1, 100vw) {
+        width: 18rem;
+        height: 18rem;
+        .photo-inner {
+          min-width: 16.5rem;
+          height: 16.5rem;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(171, 194, 218);
+      border-radius: 20rem 20rem 20rem 0rem;
+      .photo-inner {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10rem;
+        img {
+          position: absolute;
+          top: -3rem;
+        }
+      }
+    }
+  }
+  .self-introduction {
+    .self-introduction-slogan {
+      font-size: 2rem;
+      padding: 3rem 0;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    .self-introduction-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      .self-introduction-container-item {
+        display: flex;
+        h2 {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+        @include window-offset-width(0, $breakpoint-laptop) {
+          h2 {
+            width: 8rem;
+          }
+          p {
+            width: calc(100% - 8rem);
+          }
+        }
+        @include window-offset-width($breakpoint-laptop + 1, 100vw) {
+          h2 {
+            width: 15rem;
+          }
+          p {
+            width: calc(100% - 15rem);
+          }
+        }
+        p {
+          font-size: 1rem;
+          border-left: 0.2rem solid black;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+  .study-content {
+    .study-content-item {
+      h2 {
+        font-size: 1.5rem;
+        padding: 3rem 0 1rem 0;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  .my-projects {
+    h1 {
+      padding: 3rem 0 1rem 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      padding: 2rem 0 0.5rem 0;
+    }
+    h3 {
+      font-size: 1rem;
+      padding: 2rem 0 0.5rem 0;
+    }
+    p,
+    li {
+      font-size: 1rem;
+    }
+  }
+}
